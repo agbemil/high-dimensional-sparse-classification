@@ -82,6 +82,24 @@ The following results were generated from the supplied train/test datasets using
 | Runtime in this run | 12.11 s | 11.63 s |
 | Iterations | 1,000 | 1,000 |
 
+## Visual Results
+
+### Optimization Convergence
+
+![Convergence comparison](results/convergence_comparison.png)
+
+### Forward-Backward Splitting ROC Curves
+
+![FBS ROC curves](results/roc_fbs.png)
+
+### FBS Confusion Matrix
+
+![FBS confusion matrix](results/confusion_matrix_fbs.png)
+
+### Subgradient Descent ROC Curves
+
+![Subgradient ROC curves](results/roc_subgradient.png)
+
 ### Main Finding
 
 FBS achieved substantially better classification performance while producing a highly sparse solution: only **189 of 3,366 penalized coefficients remained nonzero**, corresponding to about **94.4% zeros**.
@@ -172,20 +190,6 @@ python -m src.train --tune
 
 The tuning option evaluates a small parameter grid using stratified cross-validation before fitting the final FBS model.
 
-## Improvements Over the Original Script
-
-The refactored version:
-
-- removes machine-specific Windows file paths;
-- uses one numerically stable softmax implementation;
-- fixes the FBS final-iterate update;
-- uses consistent train/test label encoding;
-- computes one-vs-rest specificity correctly;
-- calculates performance values programmatically instead of hard-coding them;
-- excludes the intercept from the L1 penalty;
-- reports sparsity, macro F1, ROC-AUC, runtime, sensitivity, and specificity;
-- separates preprocessing, optimization, evaluation, and execution code;
-- includes basic automated tests.
 
 ## Reproducibility
 
