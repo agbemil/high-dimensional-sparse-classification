@@ -197,4 +197,4 @@ Random seeds are fixed for class balancing and cross-validation. Preprocessing t
 
 ## Author
 
-Agbemade
+Dr. Emil Agbemade
