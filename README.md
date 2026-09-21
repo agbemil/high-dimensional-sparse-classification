@@ -33,16 +33,16 @@ Unlike a project that simply calls a prebuilt classifier, the core optimization 
 
 For class \(k\), the model uses the softmax transformation
 
-\[
+
 P(Y_i=k\mid x_i)
 =
 \frac{\exp(x_i^\top \beta_k)}
 {\sum_{j=1}^K \exp(x_i^\top \beta_j)}.
-\]
+
 
 The objective combines multinomial cross-entropy with an L1 penalty:
 
-\[
+
 \mathcal{J}(\beta)
 =
 -\frac{1}{n}
@@ -51,7 +51,7 @@ The objective combines multinomial cross-entropy with an L1 penalty:
 y_{ik}\log p_{ik}
 +
 \lambda\|\beta\|_1.
-\]
+
 
 The intercept is excluded from penalization.
 
